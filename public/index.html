@@ -3,18 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Telegram Subs Overlay</title>
+  <title>Telegram Goal Bar</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <div class="wrap">
-    <section class="card" aria-live="polite">
-      <div class="topline"><span class="dot"></span><span class="label" id="label">Telegram</span></div>
-      <div class="numbers"><span class="count" id="count">--</span><span class="suffix">subs</span></div>
-      <div class="bar-track"><div class="bar-fill" id="barFill"></div></div>
+    <section class="goal-box" aria-live="polite">
+      <div class="tg-badge">
+        <span class="tg-icon">✈</span>
+        <span class="tg-text">TELEGRAM</span>
+      </div>
+
+      <div class="bar-shell">
+        <div class="bar-left" id="leftCount">0</div>
+        <div class="bar-center" id="titleText">TELEGRAM SUBS ❤</div>
+        <div class="bar-right" id="goalCount">1000</div>
+        <div class="bar-fill" id="barFill"></div>
+      </div>
+
       <div class="meta" id="meta">connecting...</div>
     </section>
   </div>
+
   <script src="./app.js" type="module"></script>
 </body>
 </html>
