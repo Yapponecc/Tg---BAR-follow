@@ -13,20 +13,9 @@ const fmt = (n) => new Intl.NumberFormat("ru-RU").format(n);
 goalEl.textContent = fmt(goal);
 titleEl.textContent = title;
 
-function render(count){
-  leftEl.textContent = fmt(count);
-  const pct = Math.max(0, Math.min(100, (count / goal) * 100));
-  fillEl.style.width = `${pct}%`;
-}
+let prevPct = -1;
 
-async function tick() {
-  try {
-    const r = await fetch(`/api/subscribers?t=${Date.now()}`);
-    const d = await r.json();
-    if (!d.ok) return;
-    let prevPct = -1;
-
-function render(count){
+function render(count) {
   leftEl.textContent = fmt(count);
   const pct = Math.max(0, Math.min(100, (count / goal) * 100));
   fillEl.style.width = `${pct}%`;
@@ -39,6 +28,12 @@ function render(count){
   prevPct = pct;
 }
 
+async function tick() {
+  try {
+    const r = await fetch(`/api/subscribers?t=${Date.now()}`);
+    const d = await r.json();
+    if (!d.ok) return;
+    render(Number(d.count || 0));
   } catch {}
 }
 
