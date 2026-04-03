@@ -1,0 +1,13 @@
+﻿{
+  "name": "tg-live-overlay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal Telegram subscriber bar overlay for TikTok LIVE Studio",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
