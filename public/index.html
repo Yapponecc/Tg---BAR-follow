@@ -3,27 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Telegram Goal Bar</title>
+  <title>TG Bar</title>
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="wrap">
-    <section class="goal-box" aria-live="polite">
-      <div class="tg-badge">
-        <span class="tg-icon">✈</span>
-        <span class="tg-text">TELEGRAM</span>
-      </div>
+  <section class="goal-box" aria-live="polite">
+    <div class="tg-icon">✈</div>
 
-      <div class="bar-shell">
-        <div class="bar-left" id="leftCount">0</div>
-        <div class="bar-center" id="titleText">TELEGRAM SUBS ❤</div>
-        <div class="bar-right" id="goalCount">1000</div>
-        <div class="bar-fill" id="barFill"></div>
-      </div>
-
-      <div class="meta" id="meta">connecting...</div>
-    </section>
-  </div>
+    <div class="bar-shell">
+      <div class="bar-left" id="leftCount">0</div>
+      <div class="bar-center" id="titleText">TELEGRAM SUBS ❤</div>
+      <div class="bar-right" id="goalCount">1000</div>
+      <div class="bar-fill" id="barFill"></div>
+    </div>
+  </section>
 
   <script src="./app.js" type="module"></script>
 </body>
