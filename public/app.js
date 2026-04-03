@@ -24,7 +24,21 @@ async function tick() {
     const r = await fetch(`/api/subscribers?t=${Date.now()}`);
     const d = await r.json();
     if (!d.ok) return;
-    render(Number(d.count || 0));
+    let prevPct = -1;
+
+function render(count){
+  leftEl.textContent = fmt(count);
+  const pct = Math.max(0, Math.min(100, (count / goal) * 100));
+  fillEl.style.width = `${pct}%`;
+
+  if (pct > prevPct && prevPct >= 0) {
+    fillEl.classList.remove("active");
+    void fillEl.offsetWidth;
+    fillEl.classList.add("active");
+  }
+  prevPct = pct;
+}
+
   } catch {}
 }
 
